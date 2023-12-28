@@ -233,17 +233,41 @@ namespace Miniräknaren
                             break;
                         case 5:
                             Console.WriteLine("Ange första basen för trapetsen:");
-                            ett = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine("Ange andra basen för trapetsen:");
-                            tva = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine("Ange trapetsens höjd:");
-                            tre = Convert.ToDouble(Console.ReadLine());
-                            area = half * (ett + tva) * tre;
-                            areaResultat.Add(area);
-                            Console.WriteLine("-------------------------------------------------");
-                            Console.WriteLine($"Trapetsens/Paralelltrapetsens area är: {area}.");
-                            Console.WriteLine("-------------------------------------------------");
-                            Fortsätta();
+                            if (double.TryParse(Console.ReadLine(), out ett))
+                            {
+                                Console.WriteLine("Ange andra basen för trapetsen:");
+                                if (double.TryParse(Console.ReadLine(), out tva))
+                                {
+                                    Console.WriteLine("Ange trapetsens höjd:");
+                                    if (double.TryParse(Console.ReadLine(), out tre))
+                                    {
+                                        area = half * (ett + tva) * tre;
+                                        areaResultat.Add(area);
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine($"Trapetsens/Paralelltrapetsens area är: {area}.");
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Fortsätta();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine("Felaktigt val, ange en siffra.");
+                                        Console.WriteLine("-------------------------------------------------");
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine("Felaktigt val, ange en siffra.");
+                                    Console.WriteLine("-------------------------------------------------");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine("Felaktigt val, ange en siffra.");
+                                Console.WriteLine("-------------------------------------------------");
+                            }
                             break;
                         case 6:
                             Console.WriteLine("Ange värde för halva storaxeln:");
