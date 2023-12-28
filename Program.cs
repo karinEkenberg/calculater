@@ -522,26 +522,28 @@ namespace Miniräknaren
                         case 7:
                             Console.WriteLine("Ange vilken siffra du vill beräkna roten ur:");
                             double roten;
-                            do//En do while loop för att ge användaren möjlighet att fortsätta även om hen matar in negativt tal
+                            if (double.TryParse(Console.ReadLine(), out roten))
                             {
-                                roten = Convert.ToDouble(Console.ReadLine());
-                                if (roten <= 0)//Kontrollerar att talet inte är negativt, då får användaren göra om valet
+                                do//En do while loop för att ge användaren möjlighet att fortsätta även om hen matar in negativt tal
                                 {
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine(">>>Talet får inte vara negativt! Försök igen:<<<<");
-                                    Console.WriteLine("-------------------------------------------------");
-                                }
-                                else
-                                {
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine("Felaktig inmatning...");
-                                    Console.WriteLine("-------------------------------------------------");
-                                }
-                            } while (roten <= 0);
-                            siffraResultat = Math.Sqrt(roten);
-                            allaResultat.Add(siffraResultat);
-                            Console.WriteLine($"Roten ur {roten} är {siffraResultat}.");
-                            Fortsätta();
+                                    if (roten <= 0)//Kontrollerar att talet inte är negativt, då får användaren göra om valet
+                                    {
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine(">>>Talet får inte vara negativt! Försök igen:<<<<");
+                                        Console.WriteLine("-------------------------------------------------");
+                                    }
+                                } while (roten <= 0);
+                                siffraResultat = Math.Sqrt(roten);
+                                allaResultat.Add(siffraResultat);
+                                Console.WriteLine($"Roten ur {roten} är {siffraResultat}.");
+                                Fortsätta();
+                            }
+                            else
+                            {
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine("Felaktig inmatning...");
+                                Console.WriteLine("-------------------------------------------------");
+                            }
                             break;
                         case 8:
                             Console.WriteLine("Ange basen:");
