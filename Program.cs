@@ -547,13 +547,29 @@ namespace Miniräknaren
                             break;
                         case 8:
                             Console.WriteLine("Ange basen:");
-                            siffraEtt = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine("Ange exponenten:");
-                            siffraTva = Convert.ToDouble(Console.ReadLine());
-                            siffraResultat = Math.Pow(siffraEtt, siffraTva);
-                            allaResultat.Add(siffraResultat);
-                            Console.WriteLine($"{siffraEtt} upphöjt till {siffraTva} är likamed {siffraResultat}.");
-                            Fortsätta();
+                            if (double.TryParse(Console.ReadLine(), out siffraEtt))
+                            {
+                                Console.WriteLine("Ange exponenten:");
+                                if (double.TryParse(Console.ReadLine(), out siffraTva))
+                                {
+                                    siffraResultat = Math.Pow(siffraEtt, siffraTva);
+                                    allaResultat.Add(siffraResultat);
+                                    Console.WriteLine($"{siffraEtt} upphöjt till {siffraTva} är likamed {siffraResultat}.");
+                                    Fortsätta();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine("Felaktig inmatning...");
+                                    Console.WriteLine("-------------------------------------------------");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine("Felaktig inmatning...");
+                                Console.WriteLine("-------------------------------------------------");
+                            }
                             break;
                         case 9:
                             Fortsätta();
