@@ -572,14 +572,14 @@ namespace Miniräknaren
                             Console.WriteLine("Ange en vinkel i grader:");
                             if (double.TryParse(Console.ReadLine(), out vinkelGrader))
                             {
-                                double vinkelRadianer = Math.PI * vinkelGrader / 180;//Konverterar vinkeln från grader till radianer
+                                double vinkelRadianer = Math.PI * vinkelGrader / 180.0;//Konverterar vinkeln från grader till radianer
                                 double sinusResultat = Math.Sin(vinkelRadianer);//Sinus
                                 Console.WriteLine($"Sinus ({vinkelGrader} grader) = {sinusResultat}.");
                                 allaResultat.Add(sinusResultat);
                                 double cosinusResultat = Math.Cos(vinkelRadianer);//Cosinus
                                 Console.WriteLine($"Cosinus ({vinkelGrader} grader) = {cosinusResultat}.");
                                 allaResultat.Add(cosinusResultat);
-                                double tangensResultat = Math.Tan(cosinusResultat);//Tangens
+                                double tangensResultat = Math.Tan(vinkelRadianer);//Tangens
                                 Console.WriteLine($"Tangens ({vinkelGrader} grader) = {tangensResultat}.");
                                 allaResultat.Add(tangensResultat);
                                 Fortsätta();
