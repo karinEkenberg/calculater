@@ -63,6 +63,8 @@
 //till Git repo där lösning är uppladdad.
 
 
+using System.ComponentModel.Design;
+
 namespace Miniräknaren
 {
     internal class Program
@@ -81,6 +83,13 @@ namespace Miniräknaren
             //    NummerTre = nummerTre;
             //    Resultatet = resultatet;
             //} 
+
+            public double IsNumber()
+            {
+
+                return 0;
+            }
+
             public static void Fortsätta()//metod för att fråga om användaren vill fortsätta eller avsluta programmet.
             {
 
@@ -132,15 +141,27 @@ namespace Miniräknaren
                     {
                         case 1:
                             Console.WriteLine("Ange rektangelns höjd:");
-                            ett = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine("Ange rektangelns bredd:");
-                            tva = Convert.ToDouble(Console.ReadLine());
-                            area = ett * tva;
-                            areaResultat.Add(area);
-                            Console.WriteLine("-------------------------------------------------");
-                            Console.WriteLine($"Rektangelns area är: {area}.");
-                            Console.WriteLine("-------------------------------------------------");
-                            Fortsätta();
+                            if(double.TryParse(Console.ReadLine(), out ett))
+                            {
+                                Console.WriteLine("Ange rektangelns bredd:");
+                                if(double.TryParse(Console.ReadLine(), out tva))
+                                {
+                                    area = ett * tva;
+                                    areaResultat.Add(area);
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine($"Rektangelns area är: {area}.");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Fortsätta();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Felaktig inmatning för bredd. Ange ett giltigt tal.");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Felaktigt inmatning för höjd. Ange ett giltigt tal.");
+                            }
                             break;
                         case 2:
                             Console.WriteLine("Skriv hur långa sidorna av kvadraten är:");
@@ -257,14 +278,15 @@ namespace Miniräknaren
                     Console.WriteLine("[3] - Multiplicera.");
                     Console.WriteLine("[4] - Area.");
                     Console.WriteLine("[5] - Dividera.");
-                    Console.WriteLine("[6] - Roten.");
-                    Console.WriteLine("[7] - Potens.");
-                    Console.WriteLine("[8] - Triomitri.");
-                    Console.WriteLine("[9] - Sinus.");
-                    Console.WriteLine("[10] - Cosinus.");
-                    Console.WriteLine("[11] - Tangens.");
-                    Console.WriteLine("[12] - Lista med alla resultat.");
-                    Console.WriteLine("[13] - Avsluta.");
+                    Console.WriteLine("[6] - Mixa (+-*/).");
+                    Console.WriteLine("[7] - Roten.");
+                    Console.WriteLine("[8] - Potens.");
+                    Console.WriteLine("[9] - Triomitri.");
+                    Console.WriteLine("[10] - Sinus.");
+                    Console.WriteLine("[11] - Cosinus.");
+                    Console.WriteLine("[12] - Tangens.");
+                    Console.WriteLine("[13] - Lista med alla resultat.");
+                    Console.WriteLine("[14] - Avsluta.");
                     Console.WriteLine("-------------------------------------------------");
 
                     Int32.TryParse(Console.ReadLine(), out int input);//Läser av användarens val och sparar den i variabeln input.
@@ -313,17 +335,11 @@ namespace Miniräknaren
                                 }
                                 if (double.TryParse(inputen, out double siffra))
                                 {
-                                    if (allaResultat.Count == 0)
-                                    {
-                                        resultatet = siffra; 
-                                    }
-                                    else
-                                    {
-                                        resultatet -= siffra;
-                                    }
+                                    resultatet -= siffra;
                                     allaResultat.Add(resultatet);
-                                    Console.Clear();
+                                    Console.WriteLine("-------------------------------------------------");
                                     Console.WriteLine($"Nuvarande resultatet är: {resultatet}");
+                                    Console.WriteLine("-------------------------------------------------");
                                 }
                                 else
                                 {
@@ -372,7 +388,7 @@ namespace Miniräknaren
                         case 5:
                             Console.WriteLine("Skriv en siffra:");
                             siffraEtt = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine($"Skriv siffran du vill multiplicera med {siffraEtt}:");
+                            Console.WriteLine($"Skriv siffran du vill dividera med {siffraEtt}:");
                             double ejNoll;
                             do
                             {
@@ -393,6 +409,8 @@ namespace Miniräknaren
                             Fortsätta();
                             break;
                         case 6:
+                            break;
+                        case 7:
                             Console.WriteLine("Ange vilken siffra du vill beräkna roten ur:");
                             double roten;
                             do//En do while loop för att ge användaren möjlighet att fortsätta även om hen matar in negativt tal
@@ -404,13 +422,19 @@ namespace Miniräknaren
                                     Console.WriteLine(">>>Talet får inte vara negativt! Försök igen:<<<<");
                                     Console.WriteLine("-------------------------------------------------");
                                 }
+                                else
+                                {
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine("Felaktig inmatning...");
+                                    Console.WriteLine("-------------------------------------------------");
+                                }
                             } while (roten <= 0);
                             siffraResultat = Math.Sqrt(roten);
                             allaResultat.Add(siffraResultat);
                             Console.WriteLine($"Roten ur {roten} är {siffraResultat}.");
                             Fortsätta();
                             break;
-                        case 7:
+                        case 8:
                             Console.WriteLine("Ange basen:");
                             siffraEtt = Convert.ToDouble(Console.ReadLine());
                             Console.WriteLine("Ange exponenten:");
@@ -418,9 +442,6 @@ namespace Miniräknaren
                             siffraResultat = Math.Pow(siffraEtt, siffraTva);
                             allaResultat.Add(siffraResultat);
                             Console.WriteLine($"{siffraEtt} upphöjt till {siffraTva} är likamed {siffraResultat}.");
-                            Fortsätta();
-                            break;
-                        case 8:
                             Fortsätta();
                             break;
                         case 9:
@@ -433,6 +454,9 @@ namespace Miniräknaren
                             Fortsätta();
                             break;
                         case 12:
+                            Fortsätta();
+                            break;
+                        case 13:
                             Console.WriteLine("Alla resultat:");
                             foreach (double resultat in allaResultat)
                             {
@@ -440,7 +464,7 @@ namespace Miniräknaren
                             }
                             Fortsätta();
                             break;
-                        case 13:
+                        case 14:
                             Console.WriteLine("Programmet avslutas.. Tack för den här gången!");
                             fortsätt = false;//Nu är boolen false och programmet/loopen avslutas.
                             break;
