@@ -84,11 +84,6 @@ namespace Miniräknaren
             //    Resultatet = resultatet;
             //} 
 
-            public double IsNumber()
-            {
-
-                return 0;
-            }
 
             public static void Fortsätta()//metod för att fråga om användaren vill fortsätta eller avsluta programmet.
             {
@@ -155,16 +150,22 @@ namespace Miniräknaren
                                 }
                                 else
                                 {
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine("Felaktig inmatning för bredd. Ange ett giltigt tal.");
+                                    Console.WriteLine("Felaktig inmatning...");
                                     Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
                                 }
                             }
                             else
                             {
+                                Console.ForegroundColor = ConsoleColor.Black;
                                 Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktigt inmatning för höjd. Ange ett giltigt tal.");
+                                Console.WriteLine("Felaktig inmatning...");
                                 Console.WriteLine("-------------------------------------------------");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Thread.Sleep(2000);
                             }
                             break;
                         case 2:
@@ -180,9 +181,12 @@ namespace Miniräknaren
                             }
                             else
                             {
+                                Console.ForegroundColor = ConsoleColor.Black;
                                 Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktigt val, ange en siffra.");
+                                Console.WriteLine("Felaktig inmatning...");
                                 Console.WriteLine("-------------------------------------------------");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Thread.Sleep(2000);
                             }
                             break;
                         case 3:
@@ -198,9 +202,12 @@ namespace Miniräknaren
                             }
                             else
                             {
+                                Console.ForegroundColor = ConsoleColor.Black;
                                 Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktigt val, ange en siffra.");
+                                Console.WriteLine("Felaktig inmatning...");
                                 Console.WriteLine("-------------------------------------------------");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Thread.Sleep(2000);
                             }
                             break;
                         case 4:
@@ -219,16 +226,22 @@ namespace Miniräknaren
                                 }
                                 else
                                 {
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine("Felaktigt val, ange en siffra.");
+                                    Console.WriteLine("Felaktig inmatning...");
                                     Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
                                 }
                             }
                             else
                             {
+                                Console.ForegroundColor = ConsoleColor.Black;
                                 Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktigt val, ange en siffra.");
+                                Console.WriteLine("Felaktig inmatning...");
                                 Console.WriteLine("-------------------------------------------------");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Thread.Sleep(2000);
                             }
                             break;
                         case 5:
@@ -250,23 +263,32 @@ namespace Miniräknaren
                                     }
                                     else
                                     {
+                                        Console.ForegroundColor = ConsoleColor.Black;
                                         Console.WriteLine("-------------------------------------------------");
-                                        Console.WriteLine("Felaktigt val, ange en siffra.");
+                                        Console.WriteLine("Felaktig inmatning...");
                                         Console.WriteLine("-------------------------------------------------");
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                        Thread.Sleep(2000);
                                     }
                                 }
                                 else
                                 {
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine("Felaktigt val, ange en siffra.");
+                                    Console.WriteLine("Felaktig inmatning...");
                                     Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
                                 }
                             }
                             else
                             {
+                                Console.ForegroundColor = ConsoleColor.Black;
                                 Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktigt val, ange en siffra.");
+                                Console.WriteLine("Felaktig inmatning...");
                                 Console.WriteLine("-------------------------------------------------");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Thread.Sleep(2000);
                             }
                             break;
                         case 6:
@@ -285,16 +307,22 @@ namespace Miniräknaren
                                 }
                                 else
                                 {
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine("Felaktigt val, ange en siffra.");
+                                    Console.WriteLine("Felaktig inmatning...");
                                     Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
                                 }
                             }
                             else
                             {
+                                Console.ForegroundColor = ConsoleColor.Black;
                                 Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktigt val, ange en siffra.");
+                                Console.WriteLine("Felaktig inmatning...");
                                 Console.WriteLine("-------------------------------------------------");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Thread.Sleep(2000);
                             }
                             break;
                         case 7:
@@ -313,16 +341,22 @@ namespace Miniräknaren
                                 }
                                 else
                                 {
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine("Felaktigt val, ange en siffra.");
+                                    Console.WriteLine("Felaktig inmatning...");
                                     Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
                                 }
                             }
                             else
                             {
+                                Console.ForegroundColor = ConsoleColor.Black;
                                 Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktigt val, ange en siffra.");
+                                Console.WriteLine("Felaktig inmatning...");
                                 Console.WriteLine("-------------------------------------------------");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Thread.Sleep(2000);
                             }
                             break;
                         case 8:
@@ -340,9 +374,12 @@ namespace Miniräknaren
                             areaBool = false;//Nu är boolen false och programmet/loopen avslutas.
                             break;
                         default:
+                            Console.ForegroundColor = ConsoleColor.Black;
                             Console.WriteLine("-------------------------------------------------");
                             Console.WriteLine(">>>>>>>>>>>>>>>>>>Ogiltigt val<<<<<<<<<<<<<<<<<<<");//Om användaren gör ett val som inte ingår i menyn så kommer ett felmeddelande.
                             Console.WriteLine("-------------------------------------------------");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Thread.Sleep(2000);
                             break;
 
                     }
@@ -406,9 +443,12 @@ namespace Miniräknaren
                                 }
                                 else
                                 {
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.WriteLine("Felaktig inmatning...");
                                     Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
                                 }
                             }
                             Fortsätta();
@@ -432,9 +472,12 @@ namespace Miniräknaren
                                 }
                                 else
                                 {
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.WriteLine("Felaktig inmatning...");
                                     Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
                                 }
                             }
                             Fortsätta();
@@ -464,9 +507,12 @@ namespace Miniräknaren
                                 }
                                 else
                                 {
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.WriteLine("Felaktig inmatning...");
                                     Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
                                 }
                             }
                             Fortsätta();
@@ -502,16 +548,22 @@ namespace Miniräknaren
                                 }
                                 else
                                 {
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.WriteLine("Felaktig inmatning...");
                                     Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
                                 }
                             }
                             else
                             {
+                                Console.ForegroundColor = ConsoleColor.Black;
                                 Console.WriteLine("-------------------------------------------------");
                                 Console.WriteLine("Felaktig inmatning...");
                                 Console.WriteLine("-------------------------------------------------");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Thread.Sleep(2000);
                             }
                             break;
                         case 6:
@@ -537,9 +589,12 @@ namespace Miniräknaren
                             }
                             else
                             {
+                                Console.ForegroundColor = ConsoleColor.Black;
                                 Console.WriteLine("-------------------------------------------------");
                                 Console.WriteLine("Felaktig inmatning...");
                                 Console.WriteLine("-------------------------------------------------");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Thread.Sleep(2000);
                             }
                             break;
                         case 8:
@@ -556,16 +611,22 @@ namespace Miniräknaren
                                 }
                                 else
                                 {
+                                    Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.WriteLine("Felaktig inmatning...");
                                     Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
                                 }
                             }
                             else
                             {
+                                Console.ForegroundColor = ConsoleColor.Black;
                                 Console.WriteLine("-------------------------------------------------");
                                 Console.WriteLine("Felaktig inmatning...");
                                 Console.WriteLine("-------------------------------------------------");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Thread.Sleep(2000);
                             }
                             break;
                         case 9:
@@ -586,27 +647,40 @@ namespace Miniräknaren
                             }
                             else
                             {
+                                Console.ForegroundColor = ConsoleColor.Black;
                                 Console.WriteLine("-------------------------------------------------");
                                 Console.WriteLine("Felaktig inmatning...");
                                 Console.WriteLine("-------------------------------------------------");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Thread.Sleep(2000);
                             }
                             break;
                         case 10:
-                            Console.WriteLine("Alla resultat:");
-                            foreach (double resultat in allaResultat)
+                            if(allaResultat.Count == 0)//Felmeddelande om det inte finns några resultat
                             {
-                                Console.WriteLine(resultat);
+                                Console.WriteLine("Det finns inga resultat att visa.");
                             }
-                            Fortsätta();
+                            else
+                            {
+                                Console.WriteLine("Alla resultat:");
+                                foreach (double resultat in allaResultat)
+                                {
+                                    Console.WriteLine(resultat);
+                                }
+                                Fortsätta();
+                            }
                             break;
                         case 11:
                             Console.WriteLine("Programmet avslutas.. Tack för den här gången!");
                             fortsätt = false;//Nu är boolen false och programmet/loopen avslutas.
                             break;
                         default:
+                            Console.ForegroundColor = ConsoleColor.Black;
                             Console.WriteLine("-------------------------------------------------");
                             Console.WriteLine(">>>>>>>>>>>>>>>>>>Ogiltigt val<<<<<<<<<<<<<<<<<<<");//Om användaren gör ett val som inte ingår i menyn så kommer ett felmeddelande.
                             Console.WriteLine("-------------------------------------------------");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Thread.Sleep(2000);
                             break;
                         }
                     }
