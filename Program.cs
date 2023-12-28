@@ -134,129 +134,18 @@ namespace Miniräknaren
                     switch (input)
                     {
                         case 1:
-                            Console.WriteLine("Ange rektangelns höjd:");
-                            if(double.TryParse(Console.ReadLine(), out ett))
+                            while (true)
                             {
-                                Console.WriteLine("Ange rektangelns bredd:");
-                                if(double.TryParse(Console.ReadLine(), out tva))
+                                Console.WriteLine("Ange rektangelns höjd:");
+                                if (double.TryParse(Console.ReadLine(), out ett))
                                 {
-                                    area = ett * tva;
-                                    areaResultat.Add(area);
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine($"Rektangelns area är: {area}.");
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Fortsätta();
-                                }
-                                else
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Black;
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine("Felaktig inmatning...");
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                    Thread.Sleep(2000);
-                                }
-                            }
-                            else
-                            {
-                                Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktig inmatning...");
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Thread.Sleep(2000);
-                            }
-                            break;
-                        case 2:
-                            Console.WriteLine("Skriv hur långa sidorna av kvadraten är:");
-                            if(double.TryParse(Console.ReadLine(), out ett))
-                            {
-                                area = ett * ett;
-                                areaResultat.Add(area);
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine($"Arean av kvadraten är: {area}.");
-                                Console.WriteLine("-------------------------------------------------");
-                                Fortsätta();
-                            }
-                            else
-                            {
-                                Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktig inmatning...");
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Thread.Sleep(2000);
-                            }
-                            break;
-                        case 3:
-                            Console.WriteLine("Skriv in radien av cirkeln:");
-                            if (double.TryParse(Console.ReadLine(), out ett))
-                            {
-                                area = pi * (ett * ett);
-                                areaResultat.Add(area);
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine($"Cirkelns area är: {area}.");
-                                Console.WriteLine("-------------------------------------------------");
-                                Fortsätta();
-                            }
-                            else
-                            {
-                                Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktig inmatning...");
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Thread.Sleep(2000);
-                            }
-                            break;
-                        case 4:
-                            Console.WriteLine("Skriv in höjden av triangeln:");
-                            if (double.TryParse(Console.ReadLine(), out ett))
-                            {
-                                Console.WriteLine("Skriv in bredden av triangeln:");
-                                if (double.TryParse(Console.ReadLine(), out tva))
-                                {
-                                    area = half * ett * tva;
-                                    areaResultat.Add(area);
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine($"Triangelns area är: {area}.");
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Fortsätta();
-                                }
-                                else
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Black;
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine("Felaktig inmatning...");
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                    Thread.Sleep(2000);
-                                }
-                            }
-                            else
-                            {
-                                Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktig inmatning...");
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Thread.Sleep(2000);
-                            }
-                            break;
-                        case 5:
-                            Console.WriteLine("Ange första basen för trapetsen:");
-                            if (double.TryParse(Console.ReadLine(), out ett))
-                            {
-                                Console.WriteLine("Ange andra basen för trapetsen:");
-                                if (double.TryParse(Console.ReadLine(), out tva))
-                                {
-                                    Console.WriteLine("Ange trapetsens höjd:");
-                                    if (double.TryParse(Console.ReadLine(), out tre))
+                                    Console.WriteLine("Ange rektangelns bredd:");
+                                    if (double.TryParse(Console.ReadLine(), out tva))
                                     {
-                                        area = half * (ett + tva) * tre;
+                                        area = ett * tva;
                                         areaResultat.Add(area);
                                         Console.WriteLine("-------------------------------------------------");
-                                        Console.WriteLine($"Trapetsens/Paralelltrapetsens area är: {area}.");
+                                        Console.WriteLine($"Rektangelns area är: {area}.");
                                         Console.WriteLine("-------------------------------------------------");
                                         Fortsätta();
                                     }
@@ -268,6 +157,7 @@ namespace Miniräknaren
                                         Console.WriteLine("-------------------------------------------------");
                                         Console.ForegroundColor = ConsoleColor.White;
                                         Thread.Sleep(2000);
+                                        continue;
                                     }
                                 }
                                 else
@@ -278,31 +168,184 @@ namespace Miniräknaren
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.ForegroundColor = ConsoleColor.White;
                                     Thread.Sleep(2000);
+                                    continue;
                                 }
+                                break;
                             }
-                            else
+                            break;
+                        case 2:
+                            while (true)
                             {
-                                Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktig inmatning...");
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Thread.Sleep(2000);
+                                Console.WriteLine("Skriv hur långa sidorna av kvadraten är:");
+                                if (double.TryParse(Console.ReadLine(), out ett))
+                                {
+                                    area = ett * ett;
+                                    areaResultat.Add(area);
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine($"Arean av kvadraten är: {area}.");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Fortsätta();
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Black;
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine("Felaktig inmatning...");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
+                                    continue;
+                                }
+                                break;
+                            }
+                            break;
+                        case 3:
+                            while (true)
+                            {
+                                Console.WriteLine("Skriv in radien av cirkeln:");
+                                if (double.TryParse(Console.ReadLine(), out ett))
+                                {
+                                    area = pi * (ett * ett);
+                                    areaResultat.Add(area);
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine($"Cirkelns area är: {area}.");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Fortsätta();
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Black;
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine("Felaktig inmatning...");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
+                                    continue;
+                                }
+                                break;
+                            }
+                            break;
+                        case 4:
+                            while (true)
+                            {
+                                Console.WriteLine("Skriv in höjden av triangeln:");
+                                if (double.TryParse(Console.ReadLine(), out ett))
+                                {
+                                    Console.WriteLine("Skriv in bredden av triangeln:");
+                                    if (double.TryParse(Console.ReadLine(), out tva))
+                                    {
+                                        area = half * ett * tva;
+                                        areaResultat.Add(area);
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine($"Triangelns area är: {area}.");
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Fortsätta();
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine("Felaktig inmatning...");
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                        Thread.Sleep(2000);
+                                        continue;
+                                    }
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Black;
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine("Felaktig inmatning...");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
+                                    continue;
+                                }
+                                break;
+                            }
+                            break;
+                        case 5:
+                            while (true)
+                            {
+
+                                Console.WriteLine("Ange första basen för trapetsen:");
+                                if (double.TryParse(Console.ReadLine(), out ett))
+                                {
+                                    Console.WriteLine("Ange andra basen för trapetsen:");
+                                    if (double.TryParse(Console.ReadLine(), out tva))
+                                    {
+                                        Console.WriteLine("Ange trapetsens höjd:");
+                                        if (double.TryParse(Console.ReadLine(), out tre))
+                                        {
+                                            area = half * (ett + tva) * tre;
+                                            areaResultat.Add(area);
+                                            Console.WriteLine("-------------------------------------------------");
+                                            Console.WriteLine($"Trapetsens/Paralelltrapetsens area är: {area}.");
+                                            Console.WriteLine("-------------------------------------------------");
+                                            Fortsätta();
+                                        }
+                                        else
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Black;
+                                            Console.WriteLine("-------------------------------------------------");
+                                            Console.WriteLine("Felaktig inmatning...");
+                                            Console.WriteLine("-------------------------------------------------");
+                                            Console.ForegroundColor = ConsoleColor.White;
+                                            Thread.Sleep(2000);
+                                            continue;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine("Felaktig inmatning...");
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                        Thread.Sleep(2000);
+                                        continue;
+                                    }
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Black;
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine("Felaktig inmatning...");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
+                                    continue;
+                                }
+                                break;
                             }
                             break;
                         case 6:
-                            Console.WriteLine("Ange värde för halva storaxeln:");
-                            if (double.TryParse(Console.ReadLine(), out ett))
+                            while (true)
                             {
-                                Console.WriteLine("Ange värde för halva lillaxeln:");
-                                if (double.TryParse(Console.ReadLine(), out tva)) 
+                                Console.WriteLine("Ange värde för halva storaxeln:");
+                                if (double.TryParse(Console.ReadLine(), out ett))
                                 {
-                                    area = pi * ett * tva;
-                                    areaResultat.Add(area);
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine($"Ellipsens area är: {area}.");
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Fortsätta();
+                                    Console.WriteLine("Ange värde för halva lillaxeln:");
+                                    if (double.TryParse(Console.ReadLine(), out tva))
+                                    {
+                                        area = pi * ett * tva;
+                                        areaResultat.Add(area);
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine($"Ellipsens area är: {area}.");
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Fortsätta();
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine("Felaktig inmatning...");
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                        Thread.Sleep(2000);
+                                        continue;
+                                    }
                                 }
                                 else
                                 {
@@ -312,31 +355,37 @@ namespace Miniräknaren
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.ForegroundColor = ConsoleColor.White;
                                     Thread.Sleep(2000);
+                                    continue;
                                 }
-                            }
-                            else
-                            {
-                                Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktig inmatning...");
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Thread.Sleep(2000);
+                                break;
                             }
                             break;
                         case 7:
-                            Console.WriteLine("Ange värde av första diagonalen:");
-                            if (double.TryParse(Console.ReadLine(), out ett))
+                            while (true)
                             {
-                                Console.WriteLine("Ange värde av andra diagonalen:");
-                                if (double.TryParse(Console.ReadLine(), out tva))
+                                Console.WriteLine("Ange värde av första diagonalen:");
+                                if (double.TryParse(Console.ReadLine(), out ett))
                                 {
-                                    area = half * ett * tva;
-                                    areaResultat.Add(area);
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine($"Rombens area är: {area}.");
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Fortsätta();
+                                    Console.WriteLine("Ange värde av andra diagonalen:");
+                                    if (double.TryParse(Console.ReadLine(), out tva))
+                                    {
+                                        area = half * ett * tva;
+                                        areaResultat.Add(area);
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine($"Rombens area är: {area}.");
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Fortsätta();
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine("Felaktig inmatning...");
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                        Thread.Sleep(2000);
+                                        continue;
+                                    }
                                 }
                                 else
                                 {
@@ -346,16 +395,9 @@ namespace Miniräknaren
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.ForegroundColor = ConsoleColor.White;
                                     Thread.Sleep(2000);
+                                    continue;
                                 }
-                            }
-                            else
-                            {
-                                Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktig inmatning...");
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Thread.Sleep(2000);
+                                break;
                             }
                             break;
                         case 8:
@@ -448,29 +490,16 @@ namespace Miniräknaren
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.ForegroundColor = ConsoleColor.White;
                                     Thread.Sleep(2000);
+                                    continue;
                                 }
                             }
                             Fortsätta();
                             break;//Avbryter adderingen och går tillbaka till början av loopen.
                         case 2:
-                            Console.WriteLine("Ange talet du vill subtrahera ifrån (x för att avsluta subtraktion):");
-                            if (!double.TryParse(Console.ReadLine(), out double startTal))
+                            while (true)
                             {
-                                Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktig inmatning...");
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Thread.Sleep(2000);
-                                continue;
-                            }
-                            double result = startTal;
-                            bool minus = true;
-                            while (minus)
-                            {
-                                Console.WriteLine($"Nuvarande värde {result}.");
-                                Console.WriteLine("Ange värde att subtrahera med:");
-                                if (!double.TryParse(Console.ReadLine(), out double subtraktion))
+                                Console.WriteLine("Ange talet du vill subtrahera ifrån:");
+                                if (!double.TryParse(Console.ReadLine(), out double startTal))
                                 {
                                     Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("-------------------------------------------------");
@@ -480,20 +509,39 @@ namespace Miniräknaren
                                     Thread.Sleep(2000);
                                     continue;
                                 }
-                                result -= subtraktion;
-                                allaResultat.Add(result);
-                                Console.WriteLine("Vill du fortsätta subtrahera? Jj/Nn");
-                                string svar = Console.ReadLine().ToLower();
-                                if (svar == "ja")
+                                double result = startTal;
+                                bool minus = true;
+                                while (minus)
                                 {
-                                    minus = false;
+                                    Console.WriteLine($"Nuvarande värde {result}.");
+                                    Console.WriteLine("Ange värde att subtrahera med:");
+                                    if (!double.TryParse(Console.ReadLine(), out double subtraktion))
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine("Felaktig inmatning...");
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                        Thread.Sleep(2000);
+                                        continue;
+                                    }
+                                    result -= subtraktion;
+                                    allaResultat.Add(result);
+                                    Console.WriteLine($"{startTal} - {subtraktion} = {result}");
+                                    Console.WriteLine("Vill du fortsätta subtrahera? Jj/Nn");
+                                    string svar = Console.ReadLine().ToLower();
+                                    if (svar == "ja")
+                                    {
+                                        minus = false;
+                                    }
+                                    else if (svar == "n" || svar == "x")
+                                    {
+                                        break;
+                                    }
                                 }
-                                else if (svar == "n" || svar == "x")
-                                {
-                                    break;
-                                }
+                                Console.WriteLine($"Nuvarande resultat är {result}.");
+                                break;
                             }
-                            Console.WriteLine($"Nuvarande resultat är {result}.");
                             break;
                         case 3:
                             while (true)
@@ -526,6 +574,7 @@ namespace Miniräknaren
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.ForegroundColor = ConsoleColor.White;
                                     Thread.Sleep(2000);
+                                    continue;
                                 }
                             }
                             Fortsätta();
@@ -534,30 +583,43 @@ namespace Miniräknaren
                             Area();
                             break;
                         case 5:
-                            Console.WriteLine("Skriv en siffra:");
-                            if (double.TryParse(Console.ReadLine(), out siffraEtt))
+                            while (true)
                             {
-                                Console.WriteLine($"Skriv siffran du vill dividera med {siffraEtt}:");
-                                double ejNoll;
-                                if (double.TryParse(Console.ReadLine(), out ejNoll))
+                                Console.WriteLine("Skriv en siffra:");
+                                if (double.TryParse(Console.ReadLine(), out siffraEtt))
                                 {
-                                    do
+                                    Console.WriteLine($"Skriv siffran du vill dividera med {siffraEtt}:");
+                                    double ejNoll;
+                                    if (double.TryParse(Console.ReadLine(), out ejNoll))
                                     {
-                                        ejNoll = Convert.ToDouble(Console.ReadLine());
-                                        if (ejNoll == 0)//Om användaren försöker dividera med 0 kommer ett felmeddelande.
+                                        do
                                         {
-                                            Console.WriteLine("-------------------------------------------------");
-                                            Console.WriteLine(">>>>>>Kan ej dividera med 0! Försök igen!<<<<<<<<");
-                                            Console.WriteLine("-------------------------------------------------");
-                                        }
-                                    } while (ejNoll == 0);
-                                    siffraResultat = siffraEtt / ejNoll;
-                                    allaResultat.Add(siffraResultat);
-                                    Console.Clear();
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine($"{siffraEtt} / {ejNoll} = {siffraResultat}.");
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Fortsätta();
+                                            ejNoll = Convert.ToDouble(Console.ReadLine());
+                                            if (ejNoll == 0)//Om användaren försöker dividera med 0 kommer ett felmeddelande.
+                                            {
+                                                Console.WriteLine("-------------------------------------------------");
+                                                Console.WriteLine(">>>>>>Kan ej dividera med 0! Försök igen!<<<<<<<<");
+                                                Console.WriteLine("-------------------------------------------------");
+                                            }
+                                        } while (ejNoll == 0);
+                                        siffraResultat = siffraEtt / ejNoll;
+                                        allaResultat.Add(siffraResultat);
+                                        Console.Clear();
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine($"{siffraEtt} / {ejNoll} = {siffraResultat}.");
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Fortsätta();
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine("Felaktig inmatning...");
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                        Thread.Sleep(2000);
+                                        continue;
+                                    }
                                 }
                                 else
                                 {
@@ -567,59 +629,36 @@ namespace Miniräknaren
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.ForegroundColor = ConsoleColor.White;
                                     Thread.Sleep(2000);
+                                    continue;
                                 }
-                            }
-                            else
-                            {
-                                Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktig inmatning...");
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Thread.Sleep(2000);
+                                break;
                             }
                             break;
                         case 6:
+                            while (true)
+                            {
+
+                            }
                             break;
                         case 7:
-                            Console.WriteLine("Ange vilken siffra du vill beräkna roten ur:");
-                            double roten;
-                            if (double.TryParse(Console.ReadLine(), out roten))
+                            while (true)
                             {
-                                do//En do while loop för att ge användaren möjlighet att fortsätta även om hen matar in negativt tal
+                                Console.WriteLine("Ange vilken siffra du vill beräkna roten ur:");
+                                double roten;
+                                if (double.TryParse(Console.ReadLine(), out roten))
                                 {
-                                    if (roten <= 0)//Kontrollerar att talet inte är negativt, då får användaren göra om valet
+                                    do//En do while loop för att ge användaren möjlighet att fortsätta även om hen matar in negativt tal
                                     {
-                                        Console.WriteLine("-------------------------------------------------");
-                                        Console.WriteLine(">>>Talet får inte vara negativt! Försök igen:<<<<");
-                                        Console.WriteLine("-------------------------------------------------");
-                                    }
-                                } while (roten <= 0);
-                                siffraResultat = Math.Sqrt(roten);
-                                allaResultat.Add(siffraResultat);
-                                Console.WriteLine($"Roten ur {roten} är {siffraResultat}.");
-                                Fortsätta();
-                            }
-                            else
-                            {
-                                Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktig inmatning...");
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Thread.Sleep(2000);
-                            }
-                            break;
-                        case 8:
-                            Console.WriteLine("Ange basen:");
-                            if (double.TryParse(Console.ReadLine(), out siffraEtt))
-                            {
-                                Console.WriteLine("Ange exponenten:");
-                                if (double.TryParse(Console.ReadLine(), out siffraTva))
-                                {
-                                    siffraResultat = Math.Pow(siffraEtt, siffraTva);
+                                        if (roten <= 0)//Kontrollerar att talet inte är negativt, då får användaren göra om valet
+                                        {
+                                            Console.WriteLine("-------------------------------------------------");
+                                            Console.WriteLine(">>>Talet får inte vara negativt! Försök igen:<<<<");
+                                            Console.WriteLine("-------------------------------------------------");
+                                        }
+                                    } while (roten <= 0);
+                                    siffraResultat = Math.Sqrt(roten);
                                     allaResultat.Add(siffraResultat);
-                                    Console.WriteLine($"{siffraEtt} upphöjt till {siffraTva} är likamed {siffraResultat}.");
+                                    Console.WriteLine($"Roten ur {roten} är {siffraResultat}.");
                                     Fortsätta();
                                 }
                                 else
@@ -630,42 +669,78 @@ namespace Miniräknaren
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.ForegroundColor = ConsoleColor.White;
                                     Thread.Sleep(2000);
+                                    continue;
                                 }
+                                break;
                             }
-                            else
+                            break;
+                        case 8:
+                            while (true)
                             {
-                                Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktig inmatning...");
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Thread.Sleep(2000);
+                                Console.WriteLine("Ange basen:");
+                                if (double.TryParse(Console.ReadLine(), out siffraEtt))
+                                {
+                                    Console.WriteLine("Ange exponenten:");
+                                    if (double.TryParse(Console.ReadLine(), out siffraTva))
+                                    {
+                                        siffraResultat = Math.Pow(siffraEtt, siffraTva);
+                                        allaResultat.Add(siffraResultat);
+                                        Console.WriteLine($"{siffraEtt} upphöjt till {siffraTva} är likamed {siffraResultat}.");
+                                        Fortsätta();
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Black;
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.WriteLine("Felaktig inmatning...");
+                                        Console.WriteLine("-------------------------------------------------");
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                        Thread.Sleep(2000);
+                                        continue;
+                                    }
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Black;
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine("Felaktig inmatning...");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
+                                    continue;
+                                }
+                                break;
                             }
                             break;
                         case 9:
-                            Console.WriteLine("Ange en vinkel i grader:");
-                            if (double.TryParse(Console.ReadLine(), out vinkelGrader))
+                            while (true)
                             {
-                                double vinkelRadianer = Math.PI * vinkelGrader / 180.0;//Konverterar vinkeln från grader till radianer
-                                double sinusResultat = Math.Sin(vinkelRadianer);//Sinus
-                                Console.WriteLine($"Sinus ({vinkelGrader} grader) = {sinusResultat}.");
-                                allaResultat.Add(sinusResultat);
-                                double cosinusResultat = Math.Cos(vinkelRadianer);//Cosinus
-                                Console.WriteLine($"Cosinus ({vinkelGrader} grader) = {cosinusResultat}.");
-                                allaResultat.Add(cosinusResultat);
-                                double tangensResultat = Math.Tan(vinkelRadianer);//Tangens
-                                Console.WriteLine($"Tangens ({vinkelGrader} grader) = {tangensResultat}.");
-                                allaResultat.Add(tangensResultat);
-                                Fortsätta();
-                            }
-                            else
-                            {
-                                Console.ForegroundColor = ConsoleColor.Black;
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.WriteLine("Felaktig inmatning...");
-                                Console.WriteLine("-------------------------------------------------");
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Thread.Sleep(2000);
+                                Console.WriteLine("Ange en vinkel i grader:");
+                                if (double.TryParse(Console.ReadLine(), out vinkelGrader))
+                                {
+                                    double vinkelRadianer = Math.PI * vinkelGrader / 180.0;//Konverterar vinkeln från grader till radianer
+                                    double sinusResultat = Math.Sin(vinkelRadianer);//Sinus
+                                    Console.WriteLine($"Sinus ({vinkelGrader} grader) = {sinusResultat}.");
+                                    allaResultat.Add(sinusResultat);
+                                    double cosinusResultat = Math.Cos(vinkelRadianer);//Cosinus
+                                    Console.WriteLine($"Cosinus ({vinkelGrader} grader) = {cosinusResultat}.");
+                                    allaResultat.Add(cosinusResultat);
+                                    double tangensResultat = Math.Tan(vinkelRadianer);//Tangens
+                                    Console.WriteLine($"Tangens ({vinkelGrader} grader) = {tangensResultat}.");
+                                    allaResultat.Add(tangensResultat);
+                                    Fortsätta();
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Black;
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine("Felaktig inmatning...");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Thread.Sleep(2000);
+                                    continue;
+                                }
+                                break;
                             }
                             break;
                         case 10:
