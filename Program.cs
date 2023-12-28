@@ -479,26 +479,43 @@ namespace Miniräknaren
                             break;
                         case 5:
                             Console.WriteLine("Skriv en siffra:");
-                            siffraEtt = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine($"Skriv siffran du vill dividera med {siffraEtt}:");
-                            double ejNoll;
-                            do
+                            if (double.TryParse(Console.ReadLine(), out siffraEtt))
                             {
-                                ejNoll = Convert.ToDouble(Console.ReadLine());
-                                if (ejNoll == 0)//Om användaren försöker dividera med 0 kommer ett felmeddelande.
+                                Console.WriteLine($"Skriv siffran du vill dividera med {siffraEtt}:");
+                                double ejNoll;
+                                if (double.TryParse(Console.ReadLine(), out ejNoll))
+                                {
+                                    do
+                                    {
+                                        ejNoll = Convert.ToDouble(Console.ReadLine());
+                                        if (ejNoll == 0)//Om användaren försöker dividera med 0 kommer ett felmeddelande.
+                                        {
+                                            Console.WriteLine("-------------------------------------------------");
+                                            Console.WriteLine(">>>>>>Kan ej dividera med 0! Försök igen!<<<<<<<<");
+                                            Console.WriteLine("-------------------------------------------------");
+                                        }
+                                    } while (ejNoll == 0);
+                                    siffraResultat = siffraEtt / ejNoll;
+                                    allaResultat.Add(siffraResultat);
+                                    Console.Clear();
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine($"{siffraEtt} / {ejNoll} = {siffraResultat}.");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Fortsätta();
+                                }
+                                else
                                 {
                                     Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine(">>>>>>Kan ej dividera med 0! Försök igen!<<<<<<<<");
+                                    Console.WriteLine("Felaktig inmatning...");
                                     Console.WriteLine("-------------------------------------------------");
                                 }
-                            }while (ejNoll == 0);
-                            siffraResultat = siffraEtt / ejNoll;
-                            allaResultat.Add(siffraResultat);
-                            Console.Clear();
-                            Console.WriteLine("-------------------------------------------------");
-                            Console.WriteLine($"{siffraEtt} / {ejNoll} = {siffraResultat}.");
-                            Console.WriteLine("-------------------------------------------------");
-                            Fortsätta();
+                            }
+                            else
+                            {
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine("Felaktig inmatning...");
+                                Console.WriteLine("-------------------------------------------------");
+                            }
                             break;
                         case 6:
                             break;
