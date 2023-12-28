@@ -205,15 +205,31 @@ namespace Miniräknaren
                             break;
                         case 4:
                             Console.WriteLine("Skriv in höjden av triangeln:");
-                            ett = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine("Skriv in bredden av triangeln:");
-                            tva = Convert.ToDouble(Console.ReadLine());
-                            area = half * ett * tva;
-                            areaResultat.Add(area);
-                            Console.WriteLine("-------------------------------------------------");
-                            Console.WriteLine($"Triangelns area är: {area}.");
-                            Console.WriteLine("-------------------------------------------------");
-                            Fortsätta();
+                            if (double.TryParse(Console.ReadLine(), out ett))
+                            {
+                                Console.WriteLine("Skriv in bredden av triangeln:");
+                                if (double.TryParse(Console.ReadLine(), out tva))
+                                {
+                                    area = half * ett * tva;
+                                    areaResultat.Add(area);
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine($"Triangelns area är: {area}.");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Fortsätta();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine("Felaktigt val, ange en siffra.");
+                                    Console.WriteLine("-------------------------------------------------");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine("Felaktigt val, ange en siffra.");
+                                Console.WriteLine("-------------------------------------------------");
+                            }
                             break;
                         case 5:
                             Console.WriteLine("Ange första basen för trapetsen:");
