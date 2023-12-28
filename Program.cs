@@ -155,33 +155,53 @@ namespace Miniräknaren
                                 }
                                 else
                                 {
+                                    Console.WriteLine("-------------------------------------------------");
                                     Console.WriteLine("Felaktig inmatning för bredd. Ange ett giltigt tal.");
+                                    Console.WriteLine("-------------------------------------------------");
                                 }
                             }
                             else
                             {
+                                Console.WriteLine("-------------------------------------------------");
                                 Console.WriteLine("Felaktigt inmatning för höjd. Ange ett giltigt tal.");
+                                Console.WriteLine("-------------------------------------------------");
                             }
                             break;
                         case 2:
                             Console.WriteLine("Skriv hur långa sidorna av kvadraten är:");
-                            ett = Convert.ToDouble(Console.ReadLine());
-                            area = ett * ett;
-                            areaResultat.Add(area);
-                            Console.WriteLine("-------------------------------------------------");
-                            Console.WriteLine($"Arean av kvadraten är: {area}.");
-                            Console.WriteLine("-------------------------------------------------");
-                            Fortsätta();
+                            if(double.TryParse(Console.ReadLine(), out ett))
+                            {
+                                area = ett * ett;
+                                areaResultat.Add(area);
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine($"Arean av kvadraten är: {area}.");
+                                Console.WriteLine("-------------------------------------------------");
+                                Fortsätta();
+                            }
+                            else
+                            {
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine("Felaktigt val, ange en siffra.");
+                                Console.WriteLine("-------------------------------------------------");
+                            }
                             break;
                         case 3:
                             Console.WriteLine("Skriv in radien av cirkeln:");
-                            ett = Convert.ToDouble(Console.ReadLine());
-                            area = pi * (ett * ett);
-                            areaResultat.Add(area);
-                            Console.WriteLine("-------------------------------------------------");
-                            Console.WriteLine($"Cirkelns area är: {area}.");
-                            Console.WriteLine("-------------------------------------------------");
-                            Fortsätta();
+                            if (double.TryParse(Console.ReadLine(), out ett))
+                            {
+                                area = pi * (ett * ett);
+                                areaResultat.Add(area);
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine($"Cirkelns area är: {area}.");
+                                Console.WriteLine("-------------------------------------------------");
+                                Fortsätta();
+                            }
+                            else
+                            {
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine("Felaktigt val, ange en siffra.");
+                                Console.WriteLine("-------------------------------------------------");
+                            }
                             break;
                         case 4:
                             Console.WriteLine("Skriv in höjden av triangeln:");
