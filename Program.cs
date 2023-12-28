@@ -84,7 +84,6 @@ namespace Miniräknaren
             //    Resultatet = resultatet;
             //} 
 
-
             public static void Fortsätta()//metod för att fråga om användaren vill fortsätta eller avsluta programmet.
             {
 
@@ -454,23 +453,24 @@ namespace Miniräknaren
                             Fortsätta();
                             break;//Avbryter adderingen och går tillbaka till början av loopen.
                         case 2:
-                            while (true)
+                            Console.WriteLine("Ange talet du vill subtrahera ifrån (x för att avsluta subtraktion):");
+                            if (!double.TryParse(Console.ReadLine(), out double startTal))
                             {
-                                Console.WriteLine("Skriv en siffra för att subtrahera, skriv x för att avsluta:");
-                                string inputen = Console.ReadLine();
-                                if (inputen.ToLower() == "x")
-                                {
-                                    break;
-                                }
-                                if (double.TryParse(inputen, out double siffra))
-                                {
-                                    resultatet -= siffra;
-                                    allaResultat.Add(resultatet);
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine($"Nuvarande resultatet är: {resultatet}");
-                                    Console.WriteLine("-------------------------------------------------");
-                                }
-                                else
+                                Console.ForegroundColor = ConsoleColor.Black;
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine("Felaktig inmatning...");
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Thread.Sleep(2000);
+                                continue;
+                            }
+                            double result = startTal;
+                            bool minus = true;
+                            while (minus)
+                            {
+                                Console.WriteLine($"Nuvarande värde {result}.");
+                                Console.WriteLine("Ange värde att subtrahera med:");
+                                if (!double.TryParse(Console.ReadLine(), out double subtraktion))
                                 {
                                     Console.ForegroundColor = ConsoleColor.Black;
                                     Console.WriteLine("-------------------------------------------------");
@@ -478,9 +478,22 @@ namespace Miniräknaren
                                     Console.WriteLine("-------------------------------------------------");
                                     Console.ForegroundColor = ConsoleColor.White;
                                     Thread.Sleep(2000);
+                                    continue;
+                                }
+                                result -= subtraktion;
+                                allaResultat.Add(result);
+                                Console.WriteLine("Vill du fortsätta subtrahera? Jj/Nn");
+                                string svar = Console.ReadLine().ToLower();
+                                if (svar == "ja")
+                                {
+                                    minus = false;
+                                }
+                                else if (svar == "n" || svar == "x")
+                                {
+                                    break;
                                 }
                             }
-                            Fortsätta();
+                            Console.WriteLine($"Nuvarande resultat är {result}.");
                             break;
                         case 3:
                             while (true)
