@@ -373,16 +373,13 @@ namespace Miniräknaren
                     Console.WriteLine("[6] - Mixa (+-*/).");
                     Console.WriteLine("[7] - Roten.");
                     Console.WriteLine("[8] - Potens.");
-                    Console.WriteLine("[9] - Triomitri.");
-                    Console.WriteLine("[10] - Sinus.");
-                    Console.WriteLine("[11] - Cosinus.");
-                    Console.WriteLine("[12] - Tangens.");
-                    Console.WriteLine("[13] - Lista med alla resultat.");
-                    Console.WriteLine("[14] - Avsluta.");
+                    Console.WriteLine("[9] - Trironometri (Sinus, Cosinus, Tangens).");
+                    Console.WriteLine("[10] - Lista med alla resultat.");
+                    Console.WriteLine("[11] - Avsluta.");
                     Console.WriteLine("-------------------------------------------------");
 
                     Int32.TryParse(Console.ReadLine(), out int input);//Läser av användarens val och sparar den i variabeln input.
-                    double siffraEtt, siffraTva, siffraResultat;//Lägger till variablar för beräkningarna i programmet.
+                    double siffraEtt, siffraTva, siffraResultat, vinkelGrader;//Lägger till variablar för beräkningarna i programmet.
                     double resultatet = 0;
                     switch (input)
                     {
@@ -572,18 +569,29 @@ namespace Miniräknaren
                             }
                             break;
                         case 9:
-                            Fortsätta();
+                            Console.WriteLine("Ange en vinkel i grader:");
+                            if (double.TryParse(Console.ReadLine(), out vinkelGrader))
+                            {
+                                double vinkelRadianer = Math.PI * vinkelGrader / 180;//Konverterar vinkeln från grader till radianer
+                                double sinusResultat = Math.Sin(vinkelRadianer);//Sinus
+                                Console.WriteLine($"Sinus ({vinkelGrader} grader) = {sinusResultat}.");
+                                allaResultat.Add(sinusResultat);
+                                double cosinusResultat = Math.Cos(vinkelRadianer);//Cosinus
+                                Console.WriteLine($"Cosinus ({vinkelGrader} grader) = {cosinusResultat}.");
+                                allaResultat.Add(cosinusResultat);
+                                double tangensResultat = Math.Tan(cosinusResultat);//Tangens
+                                Console.WriteLine($"Tangens ({vinkelGrader} grader) = {tangensResultat}.");
+                                allaResultat.Add(tangensResultat);
+                                Fortsätta();
+                            }
+                            else
+                            {
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine("Felaktig inmatning...");
+                                Console.WriteLine("-------------------------------------------------");
+                            }
                             break;
                         case 10:
-                            Fortsätta();
-                            break;
-                        case 11:
-                            Fortsätta();
-                            break;
-                        case 12:
-                            Fortsätta();
-                            break;
-                        case 13:
                             Console.WriteLine("Alla resultat:");
                             foreach (double resultat in allaResultat)
                             {
@@ -591,7 +599,7 @@ namespace Miniräknaren
                             }
                             Fortsätta();
                             break;
-                        case 14:
+                        case 11:
                             Console.WriteLine("Programmet avslutas.. Tack för den här gången!");
                             fortsätt = false;//Nu är boolen false och programmet/loopen avslutas.
                             break;
