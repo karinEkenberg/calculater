@@ -271,27 +271,59 @@ namespace Miniräknaren
                             break;
                         case 6:
                             Console.WriteLine("Ange värde för halva storaxeln:");
-                            ett = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine("Ange värde för halva lillaxeln:");
-                            tva = Convert.ToDouble(Console.ReadLine());
-                            area = pi * ett * tva;
-                            areaResultat.Add(area);
-                            Console.WriteLine("-------------------------------------------------");
-                            Console.WriteLine($"Ellipsens area är: {area}.");
-                            Console.WriteLine("-------------------------------------------------");
-                            Fortsätta();
+                            if (double.TryParse(Console.ReadLine(), out ett))
+                            {
+                                Console.WriteLine("Ange värde för halva lillaxeln:");
+                                if (double.TryParse(Console.ReadLine(), out tva)) 
+                                {
+                                    area = pi * ett * tva;
+                                    areaResultat.Add(area);
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine($"Ellipsens area är: {area}.");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Fortsätta();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine("Felaktigt val, ange en siffra.");
+                                    Console.WriteLine("-------------------------------------------------");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine("Felaktigt val, ange en siffra.");
+                                Console.WriteLine("-------------------------------------------------");
+                            }
                             break;
                         case 7:
                             Console.WriteLine("Ange värde av första diagonalen:");
-                            ett = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine("Ange värde av andra diagonalen:");
-                            tva = Convert.ToDouble(Console.ReadLine());
-                            area = half * ett * tva;
-                            areaResultat.Add(area);
-                            Console.WriteLine("-------------------------------------------------");
-                            Console.WriteLine($"Rombens area är: {area}.");
-                            Console.WriteLine("-------------------------------------------------");
-                            Fortsätta();
+                            if (double.TryParse(Console.ReadLine(), out ett))
+                            {
+                                Console.WriteLine("Ange värde av andra diagonalen:");
+                                if (double.TryParse(Console.ReadLine(), out tva))
+                                {
+                                    area = half * ett * tva;
+                                    areaResultat.Add(area);
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine($"Rombens area är: {area}.");
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Fortsätta();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("-------------------------------------------------");
+                                    Console.WriteLine("Felaktigt val, ange en siffra.");
+                                    Console.WriteLine("-------------------------------------------------");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("-------------------------------------------------");
+                                Console.WriteLine("Felaktigt val, ange en siffra.");
+                                Console.WriteLine("-------------------------------------------------");
+                            }
                             break;
                         case 8:
                             Console.WriteLine("Alla resultat:");
