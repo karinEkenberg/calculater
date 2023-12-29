@@ -1,9 +1,4 @@
 ﻿
-//Skapa en miniräknare som tar tal och matematiska operator från användare via konsol eller ett grafiskt interface.
-//Varje resultat ska sparas i en lista. Kopiera pseudo koden som innehåller instruktioner, klistra in i ditt projekt
-//och följa den under kodande. Analysera och utvärdera gränssnitt, designmönster och lösningar i din kod och föreslå
-//vidare utökningar.
-
 //Pseudo kod
 // Välkomnande meddelande<<<<<<<<<<<
 // En lista för att spara historik för räkningar<<<<<<
@@ -16,52 +11,6 @@
 // Visa tidigare resultat<<<<<<<
 // Fråga användaren om den vill avsluta eller fortsätta.<<<<<<<<
 
-//GIT
-//Skapa en GIT repository, och använda sig av GIT för versionshantering i denna projekt.  
-
-//Checklista
-//Input/output
-//Lista med historik
-//Kontrollstrukturer
-//Välja lämpligt designmönster
-//Källkodshantering med GIT
-
-//Betygsättning
-//Den här inlämningen kontrollerar följande läranderesultat
-
-//Kunskaper om/i:
-
-//1.Programmering
-//2.Loopar, if-satser, villkor
-//3.       Listor och arrayer 
-//4.       Funktioner 
-//5.       Lagringsstruktur, kontrollstruktur och algoritmer 
-//6.       Designmönster 
-//7.       Tekniska instruktioner och manualläsning även på engelska
-
-//Färdigheter i att:
-
-//8.Konstruera enkla program innehållande kontrollstruktur 
-//9.     Hantera dataflöde som sker genom gränssnitt 
-//10.   Använda versionshantering 
-//11.   Använda samlingsklasser
-
-//Kompetenser för att:
-
-//12.Värdera samlingsklasser och ta ställning till när något blir omodernt samt föreslå lösning
-
-
-//Godkänt (G)
-//Den studerande har visat läranderesultat kopplat till inlämningsuppgift
-
-//Väl godkänt (VG) 
-//Den studerande har visat läranderesultat kopplat till inlämningsuppgift. Den studerande kan dessutom: 
-//• självständigt och med hög kvalité analysera och utvärdera gränssnitt, designmönster och lösningar.
-
-
-//Analys och utvärdering av lösning lämnas in som en rapport (i fil format) tillsammans med länken
-//till Git repo där lösning är uppladdad.
-
 
 using System.ComponentModel.Design;
 
@@ -72,18 +21,6 @@ namespace Miniräknaren
 
         class Miniräknaren//Klass som innehåller programmets metoder.
         {
-            //public double NummerEtt {  get; set; }
-            //public double NummerTvå { get; set; }
-            //public double NummerTre {  get; set; }
-            //public double Resultatet { get; set; }
-            //public Kalkulationer(double nummerEtt, double nummerTvå, double nummerTre, double resultatet)
-            //{
-            //    NummerEtt = nummerEtt;
-            //    NummerTvå = nummerTvå;
-            //    NummerTre = nummerTre;
-            //    Resultatet = resultatet;
-            //} 
-
             public static void Fortsätta()//metod för att fråga om användaren vill fortsätta eller avsluta programmet.
             {
 
