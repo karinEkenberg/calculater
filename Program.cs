@@ -379,7 +379,7 @@ namespace Miniräknaren
                     Console.WriteLine("[5] - Dividera.");
                     Console.WriteLine("[6] - Roten.");
                     Console.WriteLine("[7] - Potens.");
-                    Console.WriteLine("[8] - Trironometri (Sinus, Cosinus, Tangens).");
+                    Console.WriteLine("[8] - Trigonometri (Sinus, Cosinus, Tangens).");
                     Console.WriteLine("[9] - Lista med alla resultat.");
                     Console.WriteLine("[10] - Avsluta.");
                     Console.WriteLine("-------------------------------------------------");
