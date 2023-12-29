@@ -107,6 +107,14 @@ namespace Miniräknaren
 
             }
 
+            public static void PrintResults(string outputen)
+            {
+                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine($"{outputen}");
+                Console.WriteLine("-------------------------------------------------");
+                Fortsätta();
+            }
+
             public static void PrintText(string output)
             {
                 Console.ForegroundColor = ConsoleColor.Black;
@@ -155,10 +163,7 @@ namespace Miniräknaren
                                     {
                                         area = ett * tva;
                                         areaResultat.Add(area);
-                                        Console.WriteLine("-------------------------------------------------");
-                                        Console.WriteLine($"Rektangelns area är: {area}.");
-                                        Console.WriteLine("-------------------------------------------------");
-                                        Fortsätta();
+                                        PrintResults($"Rektangelns area är: {area}.");
                                     }
                                     else
                                     {
@@ -182,10 +187,7 @@ namespace Miniräknaren
                                 {
                                     area = ett * ett;
                                     areaResultat.Add(area);
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine($"Arean av kvadraten är: {area}.");
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Fortsätta();
+                                    PrintResults($"Arean av kvadraten är: {area}.");
                                 }
                                 else
                                 {
@@ -203,10 +205,7 @@ namespace Miniräknaren
                                 {
                                     area = pi * (ett * ett);
                                     areaResultat.Add(area);
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Console.WriteLine($"Cirkelns area är: {area}.");
-                                    Console.WriteLine("-------------------------------------------------");
-                                    Fortsätta();
+                                    PrintResults($"Cirkelns area är: {area}.");
                                 }
                                 else
                                 {
@@ -227,10 +226,7 @@ namespace Miniräknaren
                                     {
                                         area = half * ett * tva;
                                         areaResultat.Add(area);
-                                        Console.WriteLine("-------------------------------------------------");
-                                        Console.WriteLine($"Triangelns area är: {area}.");
-                                        Console.WriteLine("-------------------------------------------------");
-                                        Fortsätta();
+                                        PrintResults($"Triangelns area är: {area}.");
                                     }
                                     else
                                     {
@@ -261,10 +257,7 @@ namespace Miniräknaren
                                         {
                                             area = half * (ett + tva) * tre;
                                             areaResultat.Add(area);
-                                            Console.WriteLine("-------------------------------------------------");
-                                            Console.WriteLine($"Trapetsens/Paralelltrapetsens area är: {area}.");
-                                            Console.WriteLine("-------------------------------------------------");
-                                            Fortsätta();
+                                            PrintResults($"Trapetsens/Paralelltrapetsens area är: {area}.");
                                         }
                                         else
                                         {
@@ -297,10 +290,7 @@ namespace Miniräknaren
                                     {
                                         area = pi * ett * tva;
                                         areaResultat.Add(area);
-                                        Console.WriteLine("-------------------------------------------------");
-                                        Console.WriteLine($"Ellipsens area är: {area}.");
-                                        Console.WriteLine("-------------------------------------------------");
-                                        Fortsätta();
+                                        PrintResults($"Ellipsens area är: {area}.");
                                     }
                                     else
                                     {
@@ -327,10 +317,7 @@ namespace Miniräknaren
                                     {
                                         area = half * ett * tva;
                                         areaResultat.Add(area);
-                                        Console.WriteLine("-------------------------------------------------");
-                                        Console.WriteLine($"Rombens area är: {area}.");
-                                        Console.WriteLine("-------------------------------------------------");
-                                        Fortsätta();
+                                        PrintResults($"Rombens area är: {area}.");
                                     }
                                     else
                                     {
@@ -521,26 +508,27 @@ namespace Miniräknaren
                             Area();
                             break;
                         case 5:
-                            Console.WriteLine("Skriv en siffra:");
-                            siffraEtt = Convert.ToDouble(Console.ReadLine());
-                            Console.WriteLine($"Skriv siffran du vill dividera med {siffraEtt}:");
-                            double ejNoll;
-                            do
+                            while (true)
                             {
-                                ejNoll = Convert.ToDouble(Console.ReadLine());
-                                if (ejNoll == 0)//Om användaren försöker dividera med 0 kommer ett felmeddelande.
+                                Console.WriteLine("Skriv en siffra:");
+                                siffraEtt = Convert.ToDouble(Console.ReadLine());
+                                Console.WriteLine($"Skriv siffran du vill dividera med {siffraEtt}:");
+                                double ejNoll;
+                                do
                                 {
-                                    PrintText("Kan ej dividera med 0...");
-                                    break;
-                                }
-                            } while (ejNoll == 0);
-                            siffraResultat = siffraEtt / ejNoll;
-                            resterandeResultat.Add(siffraResultat);
-                            Console.Clear();
-                            Console.WriteLine("-------------------------------------------------");
-                            Console.WriteLine($"{siffraEtt} / {ejNoll} = {siffraResultat}.");
-                            Console.WriteLine("-------------------------------------------------");
-                            Fortsätta();
+                                    ejNoll = Convert.ToDouble(Console.ReadLine());
+                                    if (ejNoll == 0)//Om användaren försöker dividera med 0 kommer ett felmeddelande.
+                                    {
+                                        PrintText("Kan ej dividera med 0...");
+                                        break;
+                                    }
+                                } while (ejNoll == 0);
+                                siffraResultat = siffraEtt / ejNoll;
+                                resterandeResultat.Add(siffraResultat);
+                                Console.Clear();
+                                PrintResults($"{siffraEtt} / {ejNoll} = {siffraResultat}.");
+                                break;
+                            }
                             break;
                         case 6:
                             while (true)
@@ -553,9 +541,7 @@ namespace Miniräknaren
                                     {
                                         if (roten <= 0)//Kontrollerar att talet inte är negativt, då får användaren göra om valet
                                         {
-                                            Console.WriteLine("-------------------------------------------------");
-                                            Console.WriteLine(">>>Talet får inte vara negativt! Försök igen:<<<<");
-                                            Console.WriteLine("-------------------------------------------------");
+                                            PrintText("Talet får inte vara negativt...");
                                             break;
                                         }
                                     } while (roten <= 0);
