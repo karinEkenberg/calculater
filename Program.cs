@@ -153,6 +153,7 @@ namespace Miniräknaren
                     switch (input)
                     {
                         case 1:
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Ange rektangelns höjd:");
@@ -180,6 +181,7 @@ namespace Miniräknaren
                             }
                             break;
                         case 2:
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Skriv hur långa sidorna av kvadraten är:");
@@ -198,6 +200,7 @@ namespace Miniräknaren
                             }
                             break;
                         case 3:
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Skriv in radien av cirkeln:");
@@ -216,6 +219,7 @@ namespace Miniräknaren
                             }
                             break;
                         case 4:
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Skriv in höjden av triangeln:");
@@ -243,6 +247,7 @@ namespace Miniräknaren
                             }
                             break;
                         case 5:
+                            Console.Clear();
                             while (true)
                             {
 
@@ -280,6 +285,7 @@ namespace Miniräknaren
                             }
                             break;
                         case 6:
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Ange värde för halva storaxeln:");
@@ -307,6 +313,7 @@ namespace Miniräknaren
                             }
                             break;
                         case 7:
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Ange värde av första diagonalen:");
@@ -334,6 +341,7 @@ namespace Miniräknaren
                             }
                             break;
                         case 8:
+                            Console.Clear();
                             Console.WriteLine("Alla resultat:");
                             foreach (double resultat in areaResultat)
                             {
@@ -391,6 +399,7 @@ namespace Miniräknaren
                     switch (input)
                     {
                         case 1://När användaren gör val 1 så körs följande kod:
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Skriv en siffra för att addera, skriv x för att avsluta:");
@@ -429,7 +438,7 @@ namespace Miniräknaren
                             Fortsätta();
                             break;//Avbryter adderingen och går tillbaka till början av loopen.
                         case 2:
-
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Skriv en siffra för att subtrahera den, skriv x för att avsluta:");
@@ -474,6 +483,7 @@ namespace Miniräknaren
                             Fortsätta();
                             break;
                         case 3:
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Skriv en siffra för att multiplicera, skriv x för att avsluta:");
@@ -505,32 +515,43 @@ namespace Miniräknaren
                             Fortsätta();
                             break;
                         case 4:
+                            Console.Clear();
                             Area();
                             break;
                         case 5:
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Skriv en siffra:");
-                                siffraEtt = Convert.ToDouble(Console.ReadLine());
-                                Console.WriteLine($"Skriv siffran du vill dividera med {siffraEtt}:");
-                                double ejNoll;
-                                do
+                                double siffran;
+                                if (double.TryParse(Console.ReadLine(), out siffran))
                                 {
-                                    ejNoll = Convert.ToDouble(Console.ReadLine());
-                                    if (ejNoll == 0)//Om användaren försöker dividera med 0 kommer ett felmeddelande.
+                                    Console.WriteLine($"Skriv siffran du vill dividera med {siffran}:");
+                                    double ejNoll;
+                                    do
                                     {
-                                        PrintText("Kan ej dividera med 0...");
-                                        break;
-                                    }
-                                } while (ejNoll == 0);
-                                siffraResultat = siffraEtt / ejNoll;
-                                resterandeResultat.Add(siffraResultat);
-                                Console.Clear();
-                                PrintResults($"{siffraEtt} / {ejNoll} = {siffraResultat}.");
-                                break;
+                                        ejNoll = Convert.ToDouble(Console.ReadLine());
+                                        if (ejNoll == 0)//Om användaren försöker dividera med 0 kommer ett felmeddelande.
+                                        {
+                                            PrintText("Kan ej dividera med 0...");
+                                            break;
+                                        }
+                                    } while (ejNoll == 0);
+                                    siffraResultat = siffran / ejNoll;
+                                    resterandeResultat.Add(siffraResultat);
+                                    Console.Clear();
+                                    PrintResults($"{siffran} / {ejNoll} = {siffraResultat}.");
+                                    break;
+                                }
+                                else
+                                {
+                                    PrintText("Felaktig inmatning...");
+                                    continue;
+                                }
                             }
                             break;
                         case 6:
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Ange vilken siffra du vill beräkna roten ur:");
@@ -559,6 +580,7 @@ namespace Miniräknaren
                             }
                             break;
                         case 7:
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Ange basen:");
@@ -587,6 +609,7 @@ namespace Miniräknaren
                             }
                             break;
                         case 8:
+                            Console.Clear();
                             while (true)
                             {
                                 Console.WriteLine("Ange en vinkel i grader:");
@@ -613,7 +636,8 @@ namespace Miniräknaren
                             }
                             break;
                         case 9:
-                            if(resterandeResultat.Count == 0 && allaResultat.Count == 0)//Felmeddelande om det inte finns några resultat
+                            Console.Clear();
+                            if (resterandeResultat.Count == 0 && allaResultat.Count == 0)//Felmeddelande om det inte finns några resultat
                             {
                                 Console.WriteLine("Det finns inga resultat att visa.");
                             }
