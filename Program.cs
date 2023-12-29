@@ -68,6 +68,7 @@ namespace Miniräknaren
                 List<double> areaResultat = new List<double>();//Lista att spara alla resultat i.
                 while (areaBool)
                 {
+                    Console.Clear();    
                     Console.WriteLine("-------------------------------------------------------");//Skriver ut olika area alternativ så att användaren ser vad valmöjligheterna är:
                     Console.WriteLine("Välkommen till beräkning av area! Var god gör ditt val:");
                     Console.WriteLine("-------------------------------------------------------");
@@ -314,6 +315,7 @@ namespace Miniräknaren
                 {
                     Console.BackgroundColor = ConsoleColor.Magenta;//Ändrar färger för text och bakgrund för att snygga till programmet lite :)
                     Console.ForegroundColor = ConsoleColor.White;
+                    Console.Clear();
                     Console.WriteLine("-------------------------------------------------");//Skriver ut själva programmet så att användaren ser vad valmöjligheterna är:
                     Console.WriteLine("Välkommen till miniräknaren. Var god gör ett val:");
                     Console.WriteLine("-------------------------------------------------");
@@ -421,6 +423,7 @@ namespace Miniräknaren
                             break;
                         case 3:
                             Console.Clear();
+                            double resultatMulti = 1;
                             while (true)
                             {
                                 Console.WriteLine("Skriv en siffra för att multiplicera, skriv x för att avsluta:");
@@ -431,17 +434,10 @@ namespace Miniräknaren
                                 }
                                 if (double.TryParse(inputen, out double siffra))
                                 {
-                                    if (allaResultat.Count == 0)
-                                    {
-                                        resultatet = siffra;
-                                    }
-                                    else
-                                    {
-                                        resultatet *= siffra;
-                                    }
-                                    resterandeResultat.Add(resultatet);
-                                    Console.Clear();
-                                    Console.WriteLine($"Nuvarande resultatet är: {resultatet}");
+                                  resultatMulti *= siffra;
+                                  Console.Clear();
+                                  resterandeResultat.Add(resultatMulti);
+                                  Console.WriteLine($"Nuvarande resultatet är: {resultatMulti}");
                                 }
                                 else
                                 {
